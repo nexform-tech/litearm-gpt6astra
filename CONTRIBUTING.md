@@ -26,3 +26,11 @@ python scripts/build_sim_model.py \
 ```
 
 `.so.manifest` is a local cache; do not commit it.
+
+## Real hardware
+
+Read `docs/FIDELITY.md` first. The read-only probe is:
+
+```bash
+python scripts/probe_real.py --help
+```

@@ -1,4 +1,4 @@
-.PHONY: install install-dev demo live doctor test lint
+.PHONY: install install-dev demo live doctor probe-real test lint
 
 install:
 	pip install -e .
@@ -14,6 +14,9 @@ live:
 
 doctor:
 	python -m litearm_gpt6astra doctor
+
+probe-real:
+	python scripts/probe_real.py
 
 test:
 	pytest -q
