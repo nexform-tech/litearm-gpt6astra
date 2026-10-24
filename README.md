@@ -7,6 +7,10 @@ GPT-6 Astra single-step visual policy for **LiteArm SE + LiteGrip** in **MuJoCo*
 <video src="docs/demo_2x.mp4" controls autoplay loop muted width="100%"></video>
 [Full video](docs/demo_2x.mp4)
 
+
+https://github.com/user-attachments/assets/a813138c-ebaa-476a-a282-9546b19a5e6c
+
+
 ## Quickstart
 
 Requirements: **Linux x86_64**, **Python 3.10+**.
