@@ -4,9 +4,11 @@
 
 GPT-6 Astra 单步视觉策略，驱动 **LiteArm SE + LiteGrip**，**MuJoCo** 仿真。
 
-<video src="docs/demo_2x.mp4" controls autoplay loop muted width="100%"></video>
 
-[完整视频](docs/demo_2x.mp4)
+
+https://github.com/user-attachments/assets/3f8b19c6-2eca-44ba-b543-8aa8b27318f3
+
+
 
 ## 快速开始
 
