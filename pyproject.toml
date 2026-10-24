@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litearm-gpt6astra"
+version = "0.1.0"
+description = "GPT-6 Astra single-step visual policy for LiteArm + LiteGrip, validated in MuJoCo"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "numpy>=1.24",
+  "opencv-python>=4.8",
+  "PyYAML>=6.0",
+  "mujoco>=3.5",
+]
+
+[project.optional-dependencies]
+model = ["trimesh>=4.0", "fast-simplification>=0.2"]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+litearm-astra = "litearm_gpt6astra.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["litearm_gpt6astra*"]
+
+[tool.setuptools.package-data]
+litearm_gpt6astra = ["_native/*.so", "_native/*.so.manifest"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501", "B017"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "live: requires LITEARM_ASTRA_API_KEY and network access",
+  "sim: requires MuJoCo and a working render backend",
+  "firmware: requires gcc and firmware sources",
+]

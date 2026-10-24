@@ -1,0 +1,58 @@
+seed: 0
+home_q: [-0.813, -0.523, -0.970, -2.136, 2.532, 1.340, -0.168]
+tcp_offset_m: 0.110
+max_steps: 120
+step_timeout_s: 8.0
+
+scene:
+  model_path: assets/sim_scene.xml
+  timestep: 0.002
+  table_z: 0.0
+  block_size_m: 0.03
+  start_x: [0.09, 0.15]
+  start_y: [-0.20, -0.15]
+  target_center: [0.20, -0.10]
+  target_radius_m: 0.04
+
+cameras:
+  head:
+    name: cam_head
+    width: 640
+    height: 480
+  wrist:
+    name: cam_wrist
+    width: 640
+    height: 480
+  max_age_s: 0.5
+
+safety:
+  workspace_x: [-0.45, 0.45]
+  workspace_y: [-0.45, 0.45]
+  workspace_z: [0.005, 0.65]
+  joint_margin_rad: 0.05
+  max_step_m: 0.050
+  max_step_near_grasp_m: 0.005
+  max_rotation_rad: 0.025
+  max_rotation_near_grasp_rad: 0.010
+  ik_pos_tol_m: 0.0005
+  ik_rot_tol_rad: 0.008
+  max_joint_jump_rad: 0.5
+  gross_jump_factor: 3.0
+
+gripper:
+  mode: contact
+  open_m: 0.087
+  closed_m: 0.0015
+  finger_inner_x_m: 0.0435
+  friction: 1.0
+  close_time_s: 0.8
+  trial_lift_m: 0.005
+
+astra:
+  api_style: chat
+  model: gpt-6.1-sol
+  base_url: https://mmu.vod-qcloud.com/v1
+  api_key_env: LITEARM_ASTRA_API_KEY
+  proxy: ""
+  timeout_s: 30.0
+  confidence_min: 0.80
